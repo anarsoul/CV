@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+%moderncvthemes are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman'
+% (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[green]{classic}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[scale=0.8]{geometry}
+% if you want to change the width of the column with the dates
+%\setlength{\hintscolumnwidth}{3cm}
+
+% only for the classic theme, if you want to change the width
+% of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}
+
+% required when changes are made to page layout lengths
+\AtBeginDocument{\recomputelengths}
+
+% personal data
+\firstname{Vasily}
+\familyname{Khoruzhick}
+%\title{Resumé title (optional)}
+\mobile{+37529-3670692}
+%\phone{phone (optional)}
+%\fax{fax (optional)}
+\email{anarsoul@gmail.com}
+\extrainfo{skype: anarsoul}
+\homepage{anarsoul.blogspot.com}
+\photo[64pt]{myphoto}
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{} % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+
+\section{Education}
+\cventry{2004--2009}{B.S.}{Belarusian State University of Informatics and Radioelectronics}{Minsk}{\textit{ITC Faculty}}{}
+
+\section{Most used development tools}
+\cvcomputer{Languages}{C, C++, Python, Shell}{}{}
+\cvcomputer{Op. systems}{Gentoo Linux, Arch Linux}{}{}
+\cvcomputer{Documentation}{Doxygen, \LaTeX}{}{}
+\cvcomputer{Build systems}{GNU Make}{}{}
+\cvcomputer{SCM}{Git, Mercurial, SVN}{}{}
+\cvcomputer{IDE}{VIM}{}{}
+
+\section{Languages}
+\cvlanguage{Belarusian}{Native}{}
+\cvlanguage{English}{Intermediate}{}
+\cvlanguage{Russian}{Native}{}
+
+\section{Experience}
+\subsection{Vocational}
+
+\cventry{2011-2012}{Software Engineer}{Synesis}{Minsk}{}{BSP for a new MIPS-based devboard\newline{}
+\begin{itemize}
+\item u-boot drivers for NAND, USB device controller, NAND boot support
+\item Linux kernel drivers for:
+\begin{itemize}
+ \item NAND
+ \item Serial flash
+ \item GPIO
+ \item MFD device (SDHCI + USB host)
+ \item Custom vendor filesystem
+\end{itemize}
+\item Optimization for USB gadget driver
+\item Integrating board support into OpenWRT
+\item Software update infrastructure
+\end{itemize}}
+
+\cventry{2008-2011}{Software Engineer}{Synesis}{Minsk}{}{Software for DVB-\{T,C\} boards\newline{}
+\begin{itemize}
+\item Buildsystem (GNU make based)
+\item Integrating 3rd-party BSP into buildsystem
+\item DVB-specific database abstraction (with sqlite as backend)
+\item Safe software update system via USB and over network
+\item Sound/Video configuration stuff
+\item Production preparations
+	\begin{itemize}
+	\item Script for 3rd-party software to program NAND chips via our software
+	\item Activation system to control numbers of produced boxes at manufacturer side
+	\end{itemize}
+\item DVB operator-specific services: EPG, billing (both client and server side)
+\end{itemize}}
+
+\cventry{2007--2008}{Software Engineer}{BLRSoft}{Minsk}{}{GTK-like UI library for mobile phones \newline{}%
+\begin{itemize}%
+\item Event system
+\item A pack of widgets
+\item Bugfixes
+\end{itemize}}
+
+\cventry{2006--2007}{Software Engineer}{NTLab}{Minsk}{}{ISO7816-3,4 compliant OS for smartcards based on 8051-like SoC \newline{}%
+\begin{itemize}%
+\item UART, MMU, flash, timer drivers
+\item Filesystem
+\item Multi-application support
+\end{itemize}}
+
+\section{Opensource projects}
+\cvline{Driver for sn9c20x-based cams}{\small Added support for 0c45:624f camera (sn9c201+OV9650), implemented I420 decoder for 0c45:624x cams (it's merged into libv4l2), some small improvements. Photo in the CV header made by this driver ;). Driver was ported later to gspca framework and merged into mainline kernel \newline \url{http://groups.google.com/group/microdia}}
+\cvline{Linux kernel for iPAQ RX1950}{\small Implemented iPAQ RX1950 support (suspend support, sound driver, battery driver, many fixes and improvements, everything is merged into mainline kernel. Grep git log for 'Vasily Khoruzhick' for details) \newline \url{http://anarsoul.blogspot.com}}
+\cvline{Linux kernel for Zipit Z2}{\small Improved support for Zipit Z2 machine (USB host/device software switch, libertas WiFi driver improvements, many other fixes, almost everything is merged into mainline kernel. Grep git log for 'Vasily Khoruzhick' for details) \newline \url{http://anarsoul.blogspot.com}}
+
+\section{Interests}
+\cvline{Programming}{\small \url{http://github.com/anarsoul} \newline \url{http://www.ohloh.net/accounts/anarsoul}}
+\cvline{Guitar}{}
+\cvline{Bike}{}
+
+\end{document}
